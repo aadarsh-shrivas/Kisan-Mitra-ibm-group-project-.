@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisan Mitra - Farmer's Crop Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Kisan Mitra 🌱</div>
+            <ul>
+                <li><a href="#weather">Weather (मौसम)</a></li>
+                <li><a href="#mandi">Mandi Prices (मंडी भाव)</a></li>
+                <li><a href="#crops">Crop Guides (फसल ज्ञान)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Aapka Digital Kisan Mitra</h1>
+            <p>Get the latest weather, market prices, and crop advice instantly.</p>
+        </section>
+
+        <section id="weather" class="card-section">
+            <h2>☀️ Weather Forecast (मौसम पूर्वानुमान)</h2>
+            <div class="weather-card">
+                <img src="" alt="Weather icon" id="weather-icon">
+                <h3>Gram Baroli, Madhya Pradesh</h3>
+                <p class="temperature" id="temperature-value">--°C</p>
+                <p class="condition" id="weather-condition">Loading...</p>
+                <p class="details" id="weather-details">Fetching latest forecast...</p>
+            </div>
+        </section>
+
+        <section id="mandi" class="card-section">
+            <h2>📈 Mandi Prices (मंडी भाव)</h2>
+            <div class="mandi-checker">
+                <div class="form-group">
+                    <label for="crop-select">Select Crop (फसल चुनें):</label>
+                    <select id="crop-select">
+                        <option value="soybean">Soybean (सोयाबीन)</option>
+                        <option value="wheat">Wheat (गेहूं)</option>
+                        <option value="gram">Gram (चना)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mandi-select">Select Mandi (मंडी चुनें):</label>
+                    <select id="mandi-select">
+                        <option value="indore">Indore (इंदौर)</option>
+                        <option value="ujjain">Ujjain (उज्जैन)</option>
+                        <option value="bhopal">Bhopal (भोपाल)</option>
+                    </select>
+                </div>
+                <button id="price-btn">Check Price</button>
+                <div id="price-result">
+                    <p>Please select a crop and mandi to see the price.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="crops" class="card-section">
+            <h2>🌾 Crop Guides (फसल ज्ञानकोष)</h2>
+            <div class="guides-container">
+                <div class="guide-card">
+                    [Image of a healthy wheat field]
+                    <img src="https://i.imgur.com/vHqV5Yt.jpg" alt="Wheat field">
+                    <h3>Wheat (गेहूं)</h3>
+                    <p>Complete guide for Rabi season wheat cultivation, from sowing to harvest.</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="guide-card">
+                    <img src="https://i.imgur.com/wA05U1w.jpg" alt="Soybean field">
+                    <h3>Soybean (सोयाबीन)</h3>
+                    <p>Best practices for Kharif soybean, including pest management and fertilization.</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="guide-card">
+                    <img src="https://i.imgur.com/3Z4M5Zg.jpg" alt="Gram (chickpea) field">
+                    <h3>Gram (चना)</h3>
+                    <p>Information on improved varieties and irrigation management for gram.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Kisan Mitra. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "a4c9c92e-383a-4eb0-8343-081a2b20aa52", // The ID of this integration.
+            region: "au-syd", // The region your integration is hosted in.
+            serviceInstanceID: "076d45b3-2639-41dc-9e0b-b78cddb4d62d", // The ID of your service instance.
+            onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(function () {
+            const t = document.createElement('script');
+            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+        });
+    </script>
+</body>
+
+</html>
